@@ -1,7 +1,7 @@
 
-# accessibility-site
+# HMRC Accessibility documentation site
 
-This is a placeholder README.md for a new repository
+Guidance and support for designing and building accessible services.
 
 ### License
 
