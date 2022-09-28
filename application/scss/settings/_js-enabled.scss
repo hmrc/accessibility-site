@@ -1,0 +1,9 @@
+// Hide back link unless js is enabled
+
+.govuk-back-link {
+    display: none;
+}
+
+.js-enabled .govuk-back-link {
+    display: inline-block;
+}

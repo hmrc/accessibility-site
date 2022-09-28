@@ -1,0 +1,35 @@
+{% set titleSuffix = "Accessibility in HMRC - GOV.UK" %}
+{% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
+
+<!DOCTYPE html>
+<html class="govuk-template" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {%- block pageTitle -%}
+      {{- title + ' - ' if title -}}
+      {{- sectionTitle + ' - ' if sectionTitle and sectionTitle != title -}}
+      {{- titleSuffix -}}
+    {%- endblock -%}
+  </title>
+  <link rel="icon" href="/extension-assets/govuk-frontend/govuk/assets/images/favicon.ico">
+  <link type="text/css" rel="stylesheet" href="/accessibility-site.min.css">
+</head>
+
+<body class="govuk-template__body">
+
+  {{ govukSkipLink({
+    text: "Skip to main content",
+    href: "#main-content"
+  }) }}
+
+  {% set serviceName = "Accessibility in HMRC" %}
+
+  {%- block page -%}{%- endblock -%}
+
+
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <script src="/assets/javascripts/accessibility-site.js" type="application/javascript"></script>
+</body>
+</html>
