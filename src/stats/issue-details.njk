@@ -1,0 +1,21 @@
+---
+title: Issue details
+layout: contentPage.njk
+---
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+
+    <h1 class="govuk-heading-xl" id="issue-heading">Issue details</h1>
+    
+    <p class="govuk-!-margin-bottom-8">The different causes of failure for this issue identified in <span id="quarterDetails"></span>.</p>
+    <ol class="govuk-list govuk-list--bullet" id="issue-list"></ol>
+
+  </div>
+</div>
+
+<script src="/assets/javascripts/stats/chart.min.js"></script>
+<script src="/assets/javascripts/stats/common.js"></script>
+<script src="/assets/javascripts/stats/issue-details.js"></script>
