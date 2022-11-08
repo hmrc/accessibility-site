@@ -10,24 +10,26 @@ layout: contentPage.njk
 
     <h1 class="govuk-heading-xl">Top 5 WCAG Issues</h1>
 
-    <p class="govuk-body govuk-!-margin-bottom-8">The top 5 WCAG failures reported for services audited by our team in <span id="quarterDetails"></span>.</p>
+    <p id="page-intro" class="govuk-body govuk-!-margin-bottom-8"></p>
 
     <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
         <canvas aria-hidden="true" id="wcagChart" height="300"></canvas>
     </div>
 
-    <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Top 5 WCAG issues</caption>
-        <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Criteria</th>
-            <th scope="col" class="govuk-table__header">Description</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Number of issues</th>
-        </tr>
-        </thead>
-            <tbody class="govuk-table__body" id="top-issues-list">
-        </tbody>
-    </table>
+    <div id="page-content" style="display:none">
+      <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Top 5 WCAG issues</caption>
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Criteria</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Number of issues</th>
+          </tr>
+          </thead>
+              <tbody class="govuk-table__body" id="top-issues-list">
+          </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
