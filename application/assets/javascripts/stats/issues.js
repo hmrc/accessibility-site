@@ -5,7 +5,7 @@
 
     document.querySelector('#issue-heading').textContent = HMRCSTATS.formattedIssue(issue);
 
-    window.onload = function() {   
+    window.onload = function() {
         HMRCSTATS.getJSON('/assets/json/stats.json', dataCallback);
     }
 
@@ -21,7 +21,10 @@
         }
 
         if (!HMRCSTATS.checkQuarter(quarter, data)) {
-            quarter = HMRCSTATS.getQuarter(data);
+            document.querySelector('#page-intro').innerHTML = 'Sorry, there is no data available for the selected time period.';
+            document.querySelector('#page-content').style.display = 'none';
+
+            return;
         }
 
         HMRCSTATS.addQuarterDetails(quarter, 'quarterDetails');

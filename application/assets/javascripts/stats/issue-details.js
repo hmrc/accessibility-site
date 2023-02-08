@@ -4,8 +4,10 @@
     var detail = HMRCSTATS.getUrlParameter('detail');
     var quarter = HMRCSTATS.getUrlParameter('quarter');
 
-    document.querySelector('#issue-heading').textContent = HMRCSTATS.capitalise(detail);
+    document.querySelector('#issue-heading').innerHTML = '<span class="govuk-caption-l">' + HMRCSTATS.formattedIssue(issue) + '</span>' + HMRCSTATS.capitalise(detail);
 
+
+    HMRCSTATS.formattedIssue(issue)
     window.onload = function() {   
         HMRCSTATS.getJSON('/assets/json/stats.json', dataCallback);
     }
@@ -22,7 +24,10 @@
         }
 
         if (!HMRCSTATS.checkQuarter(quarter, data)) {
-            quarter = HMRCSTATS.getQuarter(data);
+            document.querySelector('#page-intro').innerHTML = 'Sorry, there is no data available for the selected time period.';
+            document.querySelector('#issue-list').style.display = 'none';
+
+            return;
         }
 
         HMRCSTATS.addQuarterDetails(quarter, 'quarterDetails');
@@ -54,7 +59,7 @@
                         }
 
                         for (var x = 0; x < data[i].labels[n].issues.length; x++) {
-                            listItems += '<li>' + HMRCSTATS.escape(data[i].labels[n].issues[x]) + '</li>';
+                             listItems += '<li>' + HMRCSTATS.escape(data[i].labels[n].issues[x]) + '</li>';
                         }
                     }
                 }
