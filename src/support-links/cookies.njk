@@ -5,156 +5,155 @@ layout: contentPage.njk
 
 <h1 class="govuk-heading-xl">Cookie settings</h1>
 
-<form action="/save-cookie-settings?" method="post" novalidate="">
+<div class="govuk-form-group">
+
+    <h2 class="govuk-heading-l">Cookies that measure website use</h2>
+
+    <p class="govuk-body">We use Google Analytics to measure how you use the website so we can improve it based on user needs. We do not allow Google to use or share the data about how you use this site.</p>
+
+    <p class="govuk-body">Google Analytics sets the following cookies:</p>
+
+    <table class="govuk-table overflow-x">
+
+        <caption class="govuk-table__caption govuk-visually-hidden">Google Analytics cookies</caption>
+
+        <thead class="govuk-table__head">
+
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header">Purpose</th>
+                <th scope="col" class="govuk-table__header width-80">Expires</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">[TBC]</td>
+                <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
+                <td class="govuk-table__cell">2 years</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">_ga</td>
+                <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
+                <td class="govuk-table__cell">2 years</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">[TBC]</td>
+                <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
+                <td class="govuk-table__cell">2 years</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">_gid</td>
+                <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
+                <td class="govuk-table__cell">24 hours</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <p class="govuk-body">Google Analytics sets cookies that store anonymised information about:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>how you got to the site</li>
+        <li>what you click on while you’re visiting the site</li>
+    </ul>
 
     <div class="govuk-form-group">
-        <h2 class="govuk-heading-l">Cookies that measure website use</h2>
 
-        <p class="govuk-body">We use Google Analytics to measure how you use the website so we can improve it based on user needs. We do not allow Google to use or share the data about how you use this site.</p>
+        <fieldset class="govuk-fieldset">
 
-        <p class="govuk-body">Google Analytics sets the following cookies:</p>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to allow cookies that measure website use?</legend>
 
-        <table class="govuk-table overflow-x">
+            <div class="govuk-radios" data-module="govuk-radios">
 
-            <caption class="govuk-table__caption govuk-visually-hidden">Google Analytics cookies</caption>
-  
-            <thead class="govuk-table__head">
-
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Name</th>
-                    <th scope="col" class="govuk-table__header">Purpose</th>
-                    <th scope="col" class="govuk-table__header width-80">Expires</th>
-                </tr>
-
-            </thead>
-  
-            <tbody class="govuk-table__body">
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">[TBC]</td>
-                    <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
-                    <td class="govuk-table__cell">2 years</td>
-                </tr>
-      
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">_ga</td>
-                    <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
-                    <td class="govuk-table__cell">2 years</td>
-                </tr>
-      
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">[TBC]</td>
-                    <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
-                    <td class="govuk-table__cell">2 years</td>
-                </tr>
-      
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">_gid</td>
-                    <td class="govuk-table__cell">These help us count how many people visit this site by tracking if you’ve visited before</td>
-                    <td class="govuk-table__cell">24 hours</td>
-                </tr>
-
-            </tbody>
-        </table>
-
-        <p class="govuk-body">Google Analytics sets cookies that store anonymised information about:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>how you got to the site</li>
-            <li>what you click on while you’re visiting the site</li>
-        </ul>
-
-        <div class="govuk-form-group">
-
-            <fieldset class="govuk-fieldset">
-  
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to allow cookies that measure website use?</legend>
-  
-                <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="cookieGoogleAnalytics-true" name="cookieGoogleAnalytics" type="radio" value="true">
+                    <label class="govuk-label govuk-radios__label" for="cookieGoogleAnalytics">Yes</label>
+                </div>
     
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="cookieGoogleAnalytics" name="cookieGoogleAnalytics" type="radio" value="true">
-                        <label class="govuk-label govuk-radios__label" for="cookieGoogleAnalytics">Yes</label>
-                    </div>
-        
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="cookieGoogleAnalytics-2" name="cookieGoogleAnalytics" type="radio" value="false" checked="">
-                        <label class="govuk-label govuk-radios__label" for="cookieGoogleAnalytics-2">No</label>   
-                    </div>
-    
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="cookieGoogleAnalytics-false" name="cookieGoogleAnalytics" type="radio" value="false" checked="">
+                    <label class="govuk-label govuk-radios__label" for="cookieGoogleAnalytics-2">No</label>   
                 </div>
 
-            </fieldset>
+            </div>
 
-        </div>
+        </fieldset>
 
     </div>
 
+</div>
+
+<div class="govuk-form-group">
+
+    <h2 class="govuk-heading-l">Cookies that remember your settings</h2>
+
+    <p class="govuk-body">These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the site.</p>
+    <p class="govuk-body">We use the following cookies to remember your settings:</p>
+
+    <table class="govuk-table overflow-x">
+
+        <caption class="govuk-table__caption govuk-visually-hidden">Settings cookies</caption>
+
+        <thead class="govuk-table__head">
+
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header">Purpose</th>
+                <th scope="col" class="govuk-table__header width-60">Expires</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">stw_cookie_preferences</td>
+                <td class="govuk-table__cell">Stores the cookies preferences of this site</td>
+                <td class="govuk-table__cell">28 days</td>
+            </tr>
+
+        </tbody>
+    </table>
+
     <div class="govuk-form-group">
 
-        <h2 class="govuk-heading-l">Cookies that remember your settings</h2>
+        <fieldset class="govuk-fieldset">
 
-        <p class="govuk-body">These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the site.</p>
-        <p class="govuk-body">We use the following cookies to remember your settings:</p>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to allow cookies that remember settings on the site?</legend>
 
-        <table class="govuk-table overflow-x">
-  
-            <caption class="govuk-table__caption govuk-visually-hidden">Settings cookies</caption>
-  
-            <thead class="govuk-table__head">
+            <div class="govuk-radios" data-module="govuk-radios">
 
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Name</th>
-                    <th scope="col" class="govuk-table__header">Purpose</th>
-                    <th scope="col" class="govuk-table__header width-60">Expires</th>
-                </tr>
-
-            </thead>
-  
-            <tbody class="govuk-table__body">
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">stw_cookie_preferences</td>
-                    <td class="govuk-table__cell">Stores the cookies preferences of this site</td>
-                    <td class="govuk-table__cell">28 days</td>
-                </tr>
-
-            </tbody>
-        </table>
-
-        <div class="govuk-form-group">
-
-            <fieldset class="govuk-fieldset">
-  
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to allow cookies that remember settings on the site?</legend>
-
-                <div class="govuk-radios" data-module="govuk-radios">
-
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="cookieRememberSettings" name="cookieRememberSettings" type="radio" value="true">
-                        <label class="govuk-label govuk-radios__label" for="cookieRememberSettings">Yes</label>
-                    </div>
-
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="cookieRememberSettings-2" name="cookieRememberSettings" type="radio" value="false" checked="">
-                        <label class="govuk-label govuk-radios__label" for="cookieRememberSettings-2">No</label>
-                    </div>
-
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="cookieRememberSettings-true" name="cookieRememberSettings" type="radio" value="true">
+                    <label class="govuk-label govuk-radios__label" for="cookieRememberSettings">Yes</label>
                 </div>
-  
-            </fieldset>
 
-        </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="cookieRememberSettings-false" name="cookieRememberSettings" type="radio" value="false" checked="">
+                    <label class="govuk-label govuk-radios__label" for="cookieRememberSettings-2">No</label>
+                </div>
 
-    </div>
+            </div>
 
-    <div class="govuk-form-group">
-
-        <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
-
-        <p class="govuk-body">We do not use any cookies that are strictly necessary on this website.</p>
+        </fieldset>
 
     </div>
 
-    <button type="submit" class="govuk-button" data-module="govuk-button">Save changes</button>
+</div>
 
-</form>
+<div class="govuk-form-group">
+
+    <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+
+    <p class="govuk-body">We do not use any cookies that are strictly necessary on this website.</p>
+
+</div>
+
+<button id="save-cookie-prefs" type="button" class="govuk-button" data-module="govuk-button">Save changes</button>
+
+<p id="status-message" class="govuk-body" role="status"></p>
