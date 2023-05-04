@@ -1,0 +1,170 @@
+---
+title: Semi-automated testing - Types of accessibility testing
+layout: contentPage.njk
+---
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<h1 class="govuk-heading-xl">Semi-automated testing</h1>
+
+<p class="govuk-body-l">Generally this is some form of per-page testing done using an automated tool in the browser.</p>
+<p class="govuk-body">It requires more effort than the fully automated testing but because it gives visual feedback it can be easier to identify and fix the issue.</p>
+<p class="govuk-body">This is also the only option where fully automated solutions have not yet been implemented.</p>
+
+<h2 class="govuk-heading-l">Browser-based tools</h2>
+
+<p class="govuk-body">These are tools that any member of the team can use at their desk while they’re testing the service.</p>
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Chrome DevTools",
+      headingLevel: 3
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "DevTools"
+      },
+      value: {
+        html: 'It’s worth looking at the native features available in your browser’s DevTools. Some now have dedicated accessibility panels which provide a lot of information about the page and the <a class="govuk-link" href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">accessibility tree</a>.
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a class="govuk-link" href="https://developer.chrome.com/docs/devtools/accessibility/reference/#pane">Accessibility features reference - Chrome Developers (The Accessibility pane)</a></li>
+            <li><a class="govuk-link" href="https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/">Accessibility In Chrome DevTools - Smashing Magazine</a></li>
+        </ul>'
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Accessibility checking tools",
+      headingLevel: 3
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "axe - Web Accessibility Testing"
+      },
+      value: {
+        html: 'Probably one of the more popular automated tools. The basic version adds a panel to DevTools and allows a full page to be checked. There is a pro version which adds partial page checking and some guided tests.
+        <p class="govuk-body"><a class="govuk-link" href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd">AXE on the Chrome WebStore</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "ARC Toolkit"
+      },
+      value: {
+        html: 'Adds a panel to the browser’s DevTools and also has useful additional features like a text-spacing and reflow checker.
+        <p class="govuk-body"><a class="govuk-link" href="https://chrome.google.com/webstore/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce">ARC Toolkit on the Chrome WebStore</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "WAVE Evaluation Tool"
+      },
+      value: {
+        html: 'WAVE is a web accessibility evaluation tool developed by WebAIM.org. It provides visual feedback about the accessibility of your web content by injecting icons and indicators into your page.
+        <p class="govuk-body"><a class="govuk-link" href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh">WAVE on the Chrome WebStore</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "Accessibility Insights for Web (Microsoft)"
+      },
+      value: {
+        html: 'This has a number of self-guided tests as well as some automated checks. Results primarily open in a new window.
+        <p class="govuk-body"><a class="govuk-link" href="https://chrome.google.com/webstore/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni">Accessibility Insights for Web on the Chrome WebStore</a></p>'
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Specialised tools",
+      headingLevel: 3
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Pattern checker"
+      },
+      value: {
+        html: 'This was developed in-house at HMRC to help government service teams build better services. It checks the code to provide guidance and indicate potential improvements for services using the ><a class="govuk-link" href="https://design-system.service.gov.uk/">GOV.UK Design System</a> and the ><a class="govuk-link" href="https://design.tax.service.gov.uk/hmrc-design-patterns/">HMRC design patterns</a>.
+        <p class="govuk-body"><a class="govuk-link" href="https://chrome.google.com/webstore/detail/pattern-checker/amjjliajblignodfdjalnfkekkeflkph?hl=en-GB&authuser=0">Pattern checker on the Chrome WebStore</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "Web Developer Toolbar"
+      },
+      value: {
+        html: 'Adds a toolbar button to the browser with various web developer tools. Use to validate the HTML and to disable JavaScript and CSS.
+        <p class="govuk-body"><a class="govuk-link" href="https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm">Web Developer Toolbar on the Chrome WebStore</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "WCAG Color contrast checker"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+            <li><a class="govuk-link" href="https://webaim.org/articles/contrast/devtools">WebAIM: Contrast and Color Accessibility - Evaluating Contrast with Chrome DevTools</a></li>
+            <li><a class="govuk-link" href="https://webaim.org/resources/contrastchecker/">WebAIM: Contrast Checker</a></li>
+        </ul>'
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-l">Prototyping tools</h2>
+<p class="govuk-body">It’s good practice to write good, error-free code. And once you’re out testing your prototype with users who have access needs, you’re going to be wanting well-formed HTML with zero errors, and as few accessibility problems as possible. While these tools won’t make your prototype bulletproof, they’ll go a long way towards fixing your mistakes and guiding you in the right direction.</p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "HTMLHint"
+      },
+      value: {
+        html: 'Static code analysis tool for your HTML.
+        <p class="govuk-body">Available at <a class="govuk-link" href="https://github.com/htmlhint/HTMLHint">github.com/htmlhint/HTMLHint</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "ESLint"
+      },
+      value: {
+        html: 'Tool for identifying and reporting on patterns found in JavaScript code.
+        <p class="govuk-body">Available at <a class="govuk-link" href="https://github.com/eslint/eslint">github.com/eslint/eslint</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "Stylelint"
+      },
+      value: {
+        html: 'CSS linter that helps you avoid errors and enforce conventions.
+        <p class="govuk-body">Available at <a class="govuk-link" href="https://github.com/stylelint/stylelint">github.com/stylelint/stylelint</a></p>'
+      }
+    },
+    {
+      key: {
+        text: "Prettier"
+      },
+      value: {
+        html: 'Opinionated code formatter.
+        <p class="govuk-body">Available at <a class="govuk-link" href="https://github.com/prettier/prettier">github.com/prettier/prettier</a></p>'
+      }
+    }
+  ]
+}) }}
