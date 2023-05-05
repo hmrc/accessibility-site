@@ -1,9 +1,18 @@
 {% extends 'default.njk' %}
 {% block page %}
 {%- include './partials/header.njk' -%}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 <div class="govuk-width-container">
+
+  <!-- Remove development banner on go live -->
+  {{ govukPhaseBanner({
+  tag: {
+    text: "development"
+  },
+    html: 'This site is currently in development.'
+  }) }}
 
   {{ govukBackLink({
     text: "Back",
