@@ -26,6 +26,12 @@
           {{ contents | safe }}
         {%- endblock -%}
       </div>
+      
+      {% if subnav %}
+      <div class="govuk-grid-column-one-third subnav">
+        {%- include './partials/subnav.njk' -%}
+      </div>
+      {% endif %}
     </div>
   </main>
   

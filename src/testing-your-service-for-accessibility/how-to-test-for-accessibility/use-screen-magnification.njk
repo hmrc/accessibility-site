@@ -1,0 +1,64 @@
+---
+title: Use screen magnification - How to test for accessibility
+layout: contentPage.njk
+subnav: how-to-test-for-accessibility
+subsubnav: use-screen-magnification
+---
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<h2 class="govuk-caption-l hmrc-caption-l"><span class="govuk-visually-hidden">This section is </span>Testing your service for accessibility</h2>
+<h1 class="govuk-heading-xl">Use screen magnification</h1>
+
+<p class="govuk-body-l">Screen magnification is zooming part of the display so a person with lower visual acuity can determine page content.</p>
+<p class="govuk-body">Typically the magnification will mean that the user will move their finger or cursor around the screen to explore the page.</p>
+
+<h2 class="govuk-heading-l">System set-up</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Windows"
+      },
+      value: {
+        html: 'Settings > Ease of Access > Magnifier'
+      }
+    },
+    {
+      key: {
+        text: "macOS"
+      },
+      value: {
+        html: 'System Settings > Accessibility > Zoom'
+      }
+    },
+    {
+      key: {
+        text: "Android"
+      },
+      value: {
+        html: 'Settings > Accessibility > Magnification'
+      }
+    },
+    {
+      key: {
+        text: "iOS"
+      },
+      value: {
+        html: 'Settings > Accessibility > Zoom'
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-l">Testing notes</h2>
+
+<p class="govuk-body">Test pages with x4 (400%) zoom</p>
+
+<h3 class="govuk-heading-m">What to look for</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>where pages change layout (for example where most pages don’t use a sidebar, but the odd one does as this suggests a learned pattern which is then broken)</li>
+  <li>pages which have related content remote from each other without any indicator to tie them together (for example a Check Your Answer page is missing the line under each row)</li>
+  <li>hover states which cover information or which contain information that cannot be read in full without moving off the trigger area</li>
+</ul>

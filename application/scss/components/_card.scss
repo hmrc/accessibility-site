@@ -1,21 +1,21 @@
 .app-card {
   text-decoration: none;
-  background-color: #f8f8f8;
+  background-color: govuk-colour("light-grey");
   display: block;
   padding: 20px;
   margin-bottom: 20px;
   @include govuk-media-query(desktop) {
-    min-height: 190px;
+    min-height: 150px;
   }
 }
 
 .app-card__heading {
-  color: #005ea5;
+  color: $govuk-brand-colour;
 }
 
 .app-card:hover,
 .app-card:focus {
-  background-color: #005ea5;
+  background-color: $govuk-brand-colour;
   color: white;
   outline: none;
   

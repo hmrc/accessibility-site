@@ -10,3 +10,9 @@
 
 // Components
 @import 'components/card';
+@import 'components/subnav';
+
+// sub-lists
+.govuk-list--bullet ul.govuk-list--bullet {
+    list-style-type: circle;
+}

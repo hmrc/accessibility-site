@@ -1,0 +1,57 @@
+{% set mainsection = "" %}
+{% set section = "" %}
+{% set subsection = "" %}
+
+<nav aria-labelledby="subnav-heading">
+    <h2 class="govuk-heading-m">
+        <span aria-hidden="true">Sections</span>
+        <span class="govuk-visually-hidden" id="subnav-heading">Pages in this section</a>
+    </h2>
+    {% set mainsection = "testing-your-service-for-accessibility" %}
+    <ul class="govuk-list govuk-list--spaced">
+        <li>{% set section = "when-to-test-for-accessibility" %}
+            <a {{ "aria-current=page" if subnav == section }} href="/{{ mainsection }}/{{ section }}" class="govuk-link">When to test for accessibility</a>
+        </li>
+        <li>{% set section = "types-of-accessibility-testing" %}
+            <a {{ "aria-current=page" if subnav == section and not subsubnav }} href="/{{ mainsection }}/{{ section }}" class="govuk-link">Types of accessibility testing</a>
+            {% if subnav == section %}
+            <ul class="govuk-list">
+                <li>{% set subsection = "fully-automated-testing" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Fully-automated testing</a>
+                </li>
+                <li>{% set subsection = "semi-automated-testing" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Semi-automated testing</a>
+                </li>
+            </ul>
+            {% endif %}
+        </li>
+        <li>{% set section = "how-to-test-for-accessibility" %}
+            <a {{ "aria-current=page" if subnav == section and not subsubnav }} href="/{{ mainsection }}/{{ section }}" class="govuk-link">How to test for accessibility</a>
+            {% if subnav == section %}
+            <ul class="govuk-list">
+                <li>{% set subsection = "check-code-quality" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Check code quality</a>
+                </li>
+                <li>{% set subsection = "check-content-and-usability" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Check content and usability</a>
+                </li>
+                <li>{% set subsection = "use-keyboard-only" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Use keyboard-only</a>
+                </li>
+                <li>{% set subsection = "check-for-increased-text-size-and-spacing" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Check for increased text size and spacing</a>
+                </li>
+                <li>{% set subsection = "use-screen-magnification" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Use screen magnification</a>
+                </li>
+                <li>{% set subsection = "check-colours" %}
+                    <a {{ "aria-current=page" if subsubnav == subsection }} href="/{{ mainsection }}/{{ section }}/{{ subsection }}.html" class="govuk-link">Check colours</a>
+                </li>
+            </ul>
+            {% endif %}
+        </li>
+        <li>{% set section = "assistive-technology-guides" %}
+            <a {{ "aria-current=page" if subnav == section }} href="/{{ mainsection }}/{{ section }}" class="govuk-link">Assistive technology guides</a>
+        </li>
+    </ul>
+</nav>
