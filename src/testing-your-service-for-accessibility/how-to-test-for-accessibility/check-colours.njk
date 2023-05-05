@@ -1,0 +1,96 @@
+---
+title: Check colours - How to test for accessibility
+layout: contentPage.njk
+subnav: how-to-test-for-accessibility
+subsubnav: check-colours
+---
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<h2 class="govuk-caption-l hmrc-caption-l"><span class="govuk-visually-hidden">This section is </span>Testing your service for accessibility</h2>
+<h1 class="govuk-heading-xl">Check colours</h1>
+
+<p class="govuk-body-l">It is important that interfaces do not rely on colour alone.</p>
+<p class="govuk-body">High contrast and colour filters increases the colour contrast between the foreground and background on your screen, making text and images more distinct and easier to identify.</p>
+
+<h2 class="govuk-heading-l">System set-up</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Chrome"
+      },
+      value: {
+        html: 'Chrome browser DevTools > More tools > Rendering > Emulate vision deficiencies'
+      }
+    },
+    {
+      key: {
+        text: "Windows"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--number">
+          <li>Settings > Ease of Access > Colour Filters > Inverted</li>
+          <li>Settings > Ease of Access > High Contrast</li>
+        </ul>'
+      }
+    },
+    {
+      key: {
+        text: "macOS"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--number">
+          <li>System Settings > Accessibility > Display > Colour filters</li>
+          <li>System Settings > Accessibility > Display > Invert colours</li>
+          <li>System Settings > Accessibility > Display > Display contrast > Drag the slider to at least 50%</li>
+        </ul>'
+      }
+    },
+    {
+      key: {
+        text: "Android"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--number">
+          <li>Settings > Accessibility > Text and display > Colour correction</li>
+          <li>Settings > Accessibility > Text and display > Colour inversion</li>
+        </ul>'
+      }
+    },
+    {
+      key: {
+        text: "iOS"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--number">
+          <li>Settings > Accessibility > Display & Text Size > Colour filters</li>
+          <li>Settings > Accessibility > Display & Text Size > Smart invert</li>
+        </ul>'
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-l">Testing notes</h2>
+
+<ul class="govuk-list govuk-list--number">
+  <li>Enable the colour filters/correction and check the service:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Greyscale (Achromatopsia)</li>
+      <li>Red/Green filter(Protanopia)</li>
+      <li>Green/Red filter (Deuteranopia)</li>
+      <li>Blue/Yellow filter (Tritanopia)</li>
+    </ul>
+  </li>
+  <li>Enable the colour inversion and check the service.</li>
+  <li>On Windows, enable High Contrast and check the service.</li>
+</ul>
+
+<h3 class="govuk-heading-m">What to look for</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>check colour contrast hasn't been impeded by the change in colours</li>
+  <li>everything is still readable and distinguishable</li>
+  <li>focus states are still visible</li>
+</ul>
