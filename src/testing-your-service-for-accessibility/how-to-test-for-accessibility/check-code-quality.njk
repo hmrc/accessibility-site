@@ -1,0 +1,51 @@
+---
+title: Check code quality - How to test for accessibility
+layout: contentPage.njk
+subnav: how-to-test-for-accessibility
+subsubnav: check-code-quality
+---
+
+<h2 class="govuk-caption-l hmrc-caption-l"><span class="govuk-visually-hidden">This section is </span>Testing your service for accessibility</h2>
+<h1 class="govuk-heading-xl">Check code quality</h1>
+
+<p class="govuk-body-l">This task should be completed first as it will surface lots of issues which will affect other tasks.</p>
+
+<h2 class="govuk-heading-l">System set-up</h2>
+
+<p class="govuk-body">Install some browser extensions for testing. We have listed the ones we recommend in <a class="govuk-link" href="/testing-your-service-for-accessibility/types-of-accessibility-testing/semi-automated-testing.html">Semi-automated testing: browser-based tools</a>.</p>
+
+<h2 class="govuk-heading-l">Testing notes</h2>
+
+<p class="govuk-body">Use the browser developer tools and extensions. Review errors and warnings. Examine code. Disable CSS and JS in turn.</p>
+
+<h3 class="govuk-heading-m">What to look for</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>frameworks and codebases are kept up-to-date</li>
+  <li>each page is free from HTML and WCAG errors (including colour contrast) which can be discovered using browser-based tools - use two or more tools to ensure good coverage</li>
+  <li>each page works without CSS - the page will not look pretty but all content should still be available and all actions could still be performed</li>
+  <li>each page works without client-side behaviour using JavaScript (JS)
+    <ul class="govuk-list govuk-list--bullet">
+      <li>JS should be added as a progressive enhancement. Some things may be easier with JS enabled (such as a multi-file uploader) but you should still be able to accomplish the task without JS enabled</li>
+      <li>any links or content dependent on JS should be hidden if it is not available, for example, backlinks using the the browser back history</li>
+      <li>make sure the JS does not throw errors by keeping the browser console open during testing</li>
+    </ul>
+  </li>
+  <li>backend code is not displayed, especially examining hidden copy intended for screen reader users</li>
+  <li>heading hierarchy is correct - this should provide a table of contents with headings correctly nested and no heading levels skipped</li>
+  <li>on forms
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ask only required questions. Additional inputs are marked as optional in the label</li>
+      <li>inputs have visible labels</li>
+      <li>radios and checkboxes have fieldsets with a legend that describes the grouping</li>
+      <li>ensure hints and error messages are associated with inputs (or with fieldsets when used)</li>
+      <li>no other content is present between form elements. For example, a warning message before a submit button may be missed by screen reader users navigating using shortcut keys</li>
+    </ul>
+  </li>
+  <li>for tables
+    <ul class="govuk-list govuk-list--bullet">
+      <li>used only for comparison data, not for layout</li>
+      <li>have a caption</li>
+      <li>have correct markup for column and row headings and the headings make sense</li>
+    </ul>
+  </li>
+</ul>

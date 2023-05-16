@@ -145,8 +145,6 @@ function getIssues(label) {
     })
     .then(({ data }) => {
 
-        console.log(JSON.stringify(data));
-
         // Remove any issues not in current quarter
         var result = data.filter(i => new Date(i.created_at) < endDate);
 

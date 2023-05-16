@@ -1,0 +1,71 @@
+---
+title: Check for increased text size and spacing - How to test for accessibility
+layout: contentPage.njk
+subnav: how-to-test-for-accessibility
+subsubnav: check-for-increased-text-size-and-spacing
+---
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<h2 class="govuk-caption-l hmrc-caption-l"><span class="govuk-visually-hidden">This section is </span>Testing your service for accessibility</h2>
+<h1 class="govuk-heading-xl">Check for increased text size and spacing</h1>
+
+<p class="govuk-body-l">This task is to ensure that there is no loss of content when modifying the text styling.</p>
+<p class="govuk-body">Text-size-only zoom is important to check as it is a modification which is easy for users to do themselves and provides a user with a subjectively better layout than a full-page zoom where the layout moves towards a mobile layout on desktop. On smaller screens it is also a way of increasing readability without having to pinch & zoom all the time.</p>
+
+<h2 class="govuk-heading-l">System set-up</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Windows or macOS"
+      },
+      value: {
+        html: '<p class="govuk-body">The browser matters less than testing the increase in text size and spacing, so this test can be done on any desktop operating system and browser combination.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>To increase the text size in the Chrome browser, go to chrome://settings/fonts. Increase the default font size from 16px to 32px</li>
+          <li>To increase the text spacing, use the text spacing bookmarklet or the ARC Toolkit Chrome plugin</li>
+        </ul>'
+      }
+    },
+    {
+      key: {
+        text: "Android"
+      },
+      value: {
+        html: 'In the Chrome browser go to Settings > Accessibility > Text scaling > Increase the size to 200%'
+      }
+    },
+    {
+      key: {
+        text: "iOS"
+      },
+      value: {
+        html: 'Settings > Accessibility > Display & Text Size > Larger Text > Increase the size to full'
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-l">Testing notes</h2>
+
+<ul class="govuk-list govuk-list--number">
+  <li>Change text size to 200% and review the service.</li>
+  <li>Increase text spacing and review the service.</li>
+</ul>
+
+<h3 class="govuk-heading-m">What to look for</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>check layout is not broken by the larger text or increased spacing</li>
+  <li>check text is not cut-off, overlapped or hidden</li>
+  <li>especially look at places where the following are used:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>columns of content</li>
+      <li>tabs</li>
+      <li>tables</li>
+      <li>add to a list pattern</li>
+      <li>check your answers pattern</li>
+    </ul>
+  </li>
+</ul>
