@@ -20,7 +20,9 @@
     }
 
     HMRCSTATS.escape = function(string) {
-        return string.replace(/</, '&lt;').replace(/>/, '&gt;');
+        let tempString = string.replace(/</, '&lt;').replace(/>/, '&gt;');
+
+        return tempString;
     }
 
     HMRCSTATS.getUrlParameter = function(name) {
@@ -73,16 +75,21 @@
         return null;
     }
 
-    HMRCSTATS.getQuarter = function(data) {
+    HMRCSTATS.getCurrentQuarter = function() {
         var date = new Date();
         var quarters = [4,1,2,3];
 
-        var currentQuarter = date.getFullYear() + '-' + quarters[Math.floor(date.getMonth() / 3)];
+        return date.getFullYear() + '-' + quarters[Math.floor(date.getMonth() / 3)];
+    }
 
-        return currentQuarter in data ? currentQuarter : Object.keys(data)[Object.keys(data).length - 1];
+    HMRCSTATS.getQuarter = function(data) {
+        var currentQuarter = HMRCSTATS.getCurrentQuarter();
+
+        return currentQuarter in data ? currentQuarter : null;
     }
 
     HMRCSTATS.checkQuarter = function(quarter, data) {
+        if (quarter)
         return quarter in data ? true : false;
     }
 

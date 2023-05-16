@@ -9,86 +9,87 @@ layout: contentPage.njk
   <div class="govuk-grid-column-two-thirds govuk-body">
 
     <h1 class="govuk-heading-xl" id="issue-heading">Issues</h1>
-    <p class="govuk-!-margin-bottom-8">Details of the different causes of failure discovered during audits in <span id="quarterDetails"></span>.</p>
-    <p class="govuk-!-margin-bottom-8"></p>
+    <p id="page-intro" class="govuk-!-margin-bottom-8">Details of the different causes of failure discovered during audits in <span id="quarterDetails"></span>.</p>
+   
+    <div id="page-content">
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Components</h2>
+      <p class="govuk-!-margin-bottom-8">The components that were reported to contain accessibility issues. These issues could have been caused by incorrect implementation or with the actual component themselves.</p>
+      <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
+        <canvas aria-hidden="true" id="chart1" height="300"></canvas>
+      </div>
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Components</h2>
-    <p class="govuk-!-margin-bottom-8">The components that were reported to contain accessibility issues. These issues could have been caused by incorrect implementation or with the actual component themselves.</p>
-    <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
-      <canvas aria-hidden="true" id="chart1" height="300"></canvas>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Components</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Component</th>
+          <th scope="col" class="govuk-table__header">Framework</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body" id="top-issues-list">
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Patterns</h2>
+      <p class="govuk-!-margin-bottom-8">The design patterns that had accessibility issues. These patterns may have been incorrectly implemented or used in a scenario where its purpose was not originally intended.</p>
+
+      <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
+        <canvas aria-hidden="true" id="chart2" height="300"></canvas>
+      </div>
+
+      <table class="govuk-table govuk-!-margin-top-9">
+        <caption class="govuk-table__caption govuk-table__caption--m">Patterns</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Pattern</th>
+          <th scope="col" class="govuk-table__header">Framework</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body" id="top-issues-list2">
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Audit types</h2>
+      <p class="govuk-!-margin-bottom-8">A breakdown of the different types of audits that were being conducted when the issues were detected.</p>
+
+      <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
+        <canvas aria-hidden="true" id="chart3" height="300"></canvas>
+      </div>
+
+      <table class="govuk-table govuk-!-margin-top-9">
+        <caption class="govuk-table__caption govuk-table__caption--m">Audit types</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body" id="top-issues-list3">
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Audit tasks</h2>
+      <p class="govuk-!-margin-bottom-8">The tasks that were being conduction during the audit when the acccessibility issue was discovered.</p>
+
+      <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
+        <canvas aria-hidden="true" id="chart4" height="300"></canvas>
+      </div>
+
+      <table class="govuk-table govuk-!-margin-top-9">
+        <caption class="govuk-table__caption govuk-table__caption--m">Audit tasks</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Task</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body" id="top-issues-list4">
+        </tbody>
+      </table>
     </div>
-
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Components</caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Component</th>
-        <th scope="col" class="govuk-table__header">Framework</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body" id="top-issues-list">
-      </tbody>
-    </table>
-
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Patterns</h2>
-    <p class="govuk-!-margin-bottom-8">The design patterns that had accessibility issues. These patterns may have been incorrectly implemented or used in a scenario where its purpose was not originally intended.</p>
-
-    <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
-      <canvas aria-hidden="true" id="chart2" height="300"></canvas>
-    </div>
-
-    <table class="govuk-table govuk-!-margin-top-9">
-      <caption class="govuk-table__caption govuk-table__caption--m">Patterns</caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Pattern</th>
-        <th scope="col" class="govuk-table__header">Framework</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body" id="top-issues-list2">
-      </tbody>
-    </table>
-
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Audit types</h2>
-    <p class="govuk-!-margin-bottom-8">A breakdown of the different types of audits that were being conducted when the issues were detected.</p>
-
-    <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
-      <canvas aria-hidden="true" id="chart3" height="300"></canvas>
-    </div>
-
-    <table class="govuk-table govuk-!-margin-top-9">
-      <caption class="govuk-table__caption govuk-table__caption--m">Audit types</caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Type</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body" id="top-issues-list3">
-      </tbody>
-    </table>
-
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Audit tasks</h2>
-    <p class="govuk-!-margin-bottom-8">The tasks that were being conduction during the audit when the acccessibility issue was discovered.</p>
-
-    <div class="govuk-!-margin-bottom-8 govuk-!-width-full" style="height:400px;position:relative">
-      <canvas aria-hidden="true" id="chart4" height="300"></canvas>
-    </div>
-
-    <table class="govuk-table govuk-!-margin-top-9">
-      <caption class="govuk-table__caption govuk-table__caption--m">Audit tasks</caption>
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Task</th>
-        <th scope="col" class="govuk-table__header">Description</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Issues</th>
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body" id="top-issues-list4">
-      </tbody>
-    </table>
   </div>
 </div>
 
