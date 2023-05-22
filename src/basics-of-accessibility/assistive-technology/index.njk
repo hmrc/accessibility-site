@@ -4,11 +4,112 @@ layout: contentPage.njk
 ---
 
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Assistive technology</h1>
+    <p class="govuk-body">‘Assistive technology’ is often used to describe products or systems that support and assist individuals with disabilities, restricted mobility or other impairments to perform functions that might otherwise be difficult or impossible.</p>
+
+    <h2 class="govuk-heading-l">Who uses assistive technology?</h2>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>People who are blind would rely on screen readers to read out loud what is on the screen. And the visually impaired may also use screen readers as well as magnification software. </li>
+      <li>People with motor disabilities may use speech recognition software instead of using a mouse to complete tasks on their device.</li>
+      <li>People with auditory disabilities rely on captions or sign language.</li>
+      <li>People with cognitive disabilities, such as dyslexia, may use a range of these assistive technologies to help with reading and spelling for example.</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Test with assistive technology to meet Service Standard</h2>
+    <p class="govuk-body">To make sure everyone can use the service across GOV.UK we should test we should include testing with assitive technology.</p>
+    <p class="govuk-body">Service Manual specifies which web browser and assitive technology combinations.</p>
+    {{ govukTable({
+      caption: "Combinations of assistive technologies and browsers to meet the Service Standard",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Software version",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Browser",
+          classes: 'app-custom-class'
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "JAWS (desktop screen reader)"
+          },
+          {
+            text: "2019 or later"
+          },
+          {
+            text: "Chrome or Edge (latest version)"
+          }
+        ],
+        [
+          {
+            text: "NVDA (desktop screen reader)	"
+          },
+          {
+            text: "Latest"
+          },
+          {
+            text: "Chrome or Edge (latest version)"
+          }
+        ],
+        [
+          {
+            text: "VoiceOver on iOS (mobile screen reader)	"
+          },
+          {
+            text: "Latest"
+          },
+          {
+            text: "	Safari (version 12 or later)"
+          }
+        ],
+        [
+          {
+            text: "TalkBack (mobile screen reader)"
+          },
+          {
+            text: "Latest"
+          },
+          {
+            text: "Chrome(latest version)"
+          }
+        ],
+        [
+          {
+            text: "Windows Magnifier or Apple Zoom (screen magnifiers)"
+          },
+          {
+            text: "Latest"
+          },
+          {
+            text: "Any"
+          }
+        ],
+        [
+          {
+            text: "Dragon (speech recognition)"
+          },
+          {
+            text: "15 or later"
+          },
+          {
+            text: "Chrome (latest version)"
+          }
+        ]
+      ]
+    }) }}
 
   </div>
 </div>
