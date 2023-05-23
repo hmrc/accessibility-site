@@ -1,9 +1,18 @@
 {% extends 'default.njk' %}
 {% block page %}
 {%- include './partials/header.njk' -%}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 <div class="govuk-width-container">
+
+  <!-- Remove development banner on go live -->
+  {{ govukPhaseBanner({
+  tag: {
+    text: "development"
+  },
+    html: 'This site is currently in development.'
+  }) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -12,11 +21,17 @@
 
   <main class="govuk-main-wrapper" id="main-content">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-two-thirds">
         {%- block body -%}
           {{ contents | safe }}
         {%- endblock -%}
       </div>
+      
+      {% if subnav %}
+      <div class="govuk-grid-column-one-third subnav">
+        {%- include './partials/subnav.njk' -%}
+      </div>
+      {% endif %}
     </div>
   </main>
   

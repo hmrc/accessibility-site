@@ -6,6 +6,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Remove robots meta on go live -->
+  <meta name="robots" content="noindex,nofollow">
   <title>
     {%- block pageTitle -%}
       {{- title + ' - ' if title -}}
@@ -18,7 +20,7 @@
 </head>
 
 <body class="govuk-template__body">
-
+  
   {{ govukSkipLink({
     text: "Skip to main content",
     href: "#main-content"
@@ -27,7 +29,6 @@
   {% set serviceName = "Accessibility in HMRC" %}
 
   {%- block page -%}{%- endblock -%}
-
 
   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
   <script src="/assets/javascripts/accessibility-site.js" type="application/javascript"></script>

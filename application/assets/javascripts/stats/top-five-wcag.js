@@ -3,7 +3,12 @@
     var quarter = HMRCSTATS.getUrlParameter('quarter');
     var myChart;
 
-    window.onload = function() {   
+    window.onload = function() {
+        // If no quarter passed in use current
+        if (!quarter) {
+            quarter = HMRCSTATS.getCurrentQuarter();
+        }
+
         HMRCSTATS.getJSON('/assets/json/stats.json', dataCallback);
     }
 
@@ -19,9 +24,13 @@
         }
 
         if (!HMRCSTATS.checkQuarter(quarter, data)) {
-            quarter = HMRCSTATS.getQuarter(data);
+            document.querySelector('#page-intro').innerHTML = 'Sorry, there is no data available for the selected time period.';
+            
+            return;
         }
         
+        quarter = HMRCSTATS.getQuarter(data);
+
         HMRCSTATS.addQuarterDetails(quarter, 'quarterDetails');
 
         HMRCSTATS.getJSON('/assets/json/issues-' + quarter + '.json', issuesCallback);
@@ -35,6 +44,7 @@
      */
     function issuesCallback(err, data) {
       if (err === null) {
+
 
           data.sort( function( a, b ) {
               return a.issues > b.issues ? -1 : a.issues < b.issues ? 1 : 0;
@@ -95,7 +105,13 @@
                   }
               }
           });
-      } else {
+
+          document.querySelector('#page-intro').innerHTML = 'The top 5 WCAG failures reported for services audited by our team in <span id="quarterDetails"></span>.';
+          document.querySelector('#page-content').style.display = 'block';
+          
+
+      } 
+      else {
           console.log(err);
       }
   }

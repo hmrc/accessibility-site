@@ -1,0 +1,30 @@
+.subnav nav {
+  border-left: 5px solid $govuk-brand-colour;
+  margin-left: 10px;
+  padding-left: 20px;
+}
+.subnav nav ul ul {
+  border-left: 10px solid govuk-colour("light-blue");
+  padding-left: 20px;
+}
+
+.subnav a {
+  padding: 2px 0 2px 2px;
+}
+.subnav a, .subnav a:visited {
+  color: govuk-colour("dark-blue");
+  text-decoration: none;
+}
+.subnav a:hover {
+  text-decoration: underline;
+}
+.subnav [aria-current="page"] {
+  background-color: $govuk-brand-colour;
+  color: #fff!important;
+  padding-right: 2px;
+  text-decoration: none;
+}
+.subnav [aria-current="page"]:focus {
+  background-color: $govuk-focus-colour;
+  color: $govuk-focus-text-colour!important;
+}

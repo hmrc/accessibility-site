@@ -1,0 +1,38 @@
+---
+title: Use keyboard-only - How to test for accessibility
+layout: contentPage.njk
+subnav: how-to-test-for-accessibility
+subsubnav: use-keyboard-only
+---
+
+<h2 class="govuk-caption-l hmrc-caption-l"><span class="govuk-visually-hidden">This section is </span>Testing your service for accessibility</h2>
+<h1 class="govuk-heading-xl">Use keyboard-only</h1>
+
+<p class="govuk-body-l">This task is to ensure that all functionality can be operated using a keyboard.</p>
+
+<h2 class="govuk-heading-l">System set-up</h2>
+
+<p class="govuk-body">By default, the <kdb>Tab</kdb> key is used for navigating through the focusable elements. On macOS you may need to turn this on following the <a class="govuk-link" href="https://support.apple.com/en-gb/guide/mac-help/mchlp1399/">use your keyboard like a mouse with Mac</a> guide.</p>
+
+<h2 class="govuk-heading-l">Testing notes</h2>
+
+<p class="govuk-body">On page load, do not use the mouse or interact with the page. Use your keyboard to tab through each page noting the placement of the focus.</p>
+
+<h3 class="govuk-heading-m">What to look for</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>first focus placement should be the skip link in the top left corner, unless an error summary is present
+    <ul class="govuk-list govuk-list--bullet">
+      <li>if an error summary is present focus should be immediately placed on the summary container, and subsequent tabbing should take you through the error summary links</li>
+      <li>skip to main content takes you to the main content landmark of the page, after which it should progress into the primary content, bypassing the main banner, language toggle and back link</li>
+    </ul>
+  </li>
+  <li>each actionable control is reachable. Note, mouse hover alone isn't required to action events</li>
+  <li>focus states are obvious</li>
+  <li>order of tabbable controls is logical
+    <ul class="govuk-list govuk-list--bullet">
+      <li>check tab order in zoomed view / mobile view on desktop</li>
+    </ul>
+  </li>
+  <li>any timeout dialog receives immediate focus when activated and tabbing is restricted to the dialog; you should not be able to tab out of the dialog into the page behind</li>
+  <li>links styled as buttons can be actioned with the spacebar - if the page scrolls instead, initialise with the JavaScript polyfill to ensure the link acts like a button</li>
+</ul>

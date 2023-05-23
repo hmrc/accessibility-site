@@ -8,11 +8,14 @@ layout: contentPage.njk
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
 
-    <h1 class="govuk-heading-xl" id="issue-heading">Issue details</h1>
+    <h1 class="govuk-heading-xl" id="issue-heading">
+      <span class="govuk-caption-l">[WCAG criteria]</span>
+      [Issue title]
+    </h1>
     
-    <p class="govuk-!-margin-bottom-8">The different causes of failure for this issue identified in <span id="quarterDetails"></span>.</p>
-    <ol class="govuk-list govuk-list--bullet" id="issue-list"></ol>
-
+    <p id="page-intro" class="govuk-!-margin-bottom-8">The different causes of failure for the <span>[name]</span> <span>[component]</span> identified in <span id="quarterDetails"></span>.</p>
+    <ol id="issue-list" class="govuk-list govuk-list--bullet"></ol>
+    
   </div>
 </div>
 
