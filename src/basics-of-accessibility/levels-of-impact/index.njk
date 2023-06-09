@@ -4,11 +4,126 @@ layout: contentPage.njk
 ---
 
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl">Levels of impact</h1>
+<h2 class="govuk-heading-l">Disabilities can be permanent, temporary or situational</h2>
+<p class="govuk-body">At least <a href="https://www.scope.org.uk/media/disability-facts-figures" class="govuk-link">1 in 5 people in the UK have a long term illness, impairment or disability. Many more have a temporary disability.</a> Many more have a temporary disability.</p>
+<p class="govuk-body">Someone’s ability to use a service could be affected many ways and may be permanent , temporary or situational . Understanding this reinforces why we research, design and build services for everyone.
+Even if you do not have disabled users currently using your service, it’s important that you do not put up barriers to people who might want to use it in future.</p>
+<p class="govuk-body">Web accessibility is essential for people with disabilities and useful for all. Essential for some, useful for all.</p>
+<img src="/assets/images/persona-spectrum.png" alt="The Persona Spectrum">
 
-    <h1 class="govuk-heading-xl">Levels of impact</h1>
+{{ govukTable({
+  caption: "Textual content of the inclusive permanent, temporary or situational persona spectrum poster.",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Persona spectrum"
+    },
+    {
+      text: "Permanent"
+    },
+    {
+      text: "Temporary"
+    },
+    {
+      text: "Situational"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Touch"
+      },
+      {
+        text: "One arm"
+      },
+      {
+        text: "Arm injury"
+      },
+      {
+        text: "New parent"
+      }
+    ],
+    [
+      {
+        text: "See"
+      },
+      {
+        text: "Blind"
+      },
+      {
+        text: "Cataract"
+      },
+      {
+        text: "Distracted driver"
+      }
+    ],
+    [
+      {
+        text: "Hear"
+      },
+      {
+        text: "Deaf"
+      },
+      {
+        text: "Ear infection"
+      },
+      {
+        text: "Bartender"
+      }
+    ],
+    [
+      {
+        text: "Speak"
+      },
+      {
+        text: "Non-verbal"
+      },
+      {
+        text: "Laryngitis"
+      },
+      {
+        text: "Heavy accent"
+      }
+    ]
+  ]
+}) }}
 
-  </div>
-</div>
+<h2 class="govuk-heading-l">Visual impairment</h2>
+<p class="govuk-body">Over 2 million people in UK live with visual impairment</p>
+<p class="govuk-body">From RNIB</p>
+<p class="govuk-body">It is predicted that by 2020 the number of people with sight loss will rise to over 2,250,000. And by 2050, the numbers of people with sight loss in the UK will double to over four million.</p>
+<p class="govuk-body">Causes:</p>
+<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+  <li>the UK population is ageing and as we get older we are increasingly likely to experience sight loss</li>
+  <li>there is a growing incidence in key underlying causes of sight loss, such as obesity and <a href="https://www.rnib.org.uk/your-eyes/eye-conditions-az/diabetes-related-eye-conditions/" class="govuk-link">diabetes.</a></li>
+</ul>
+<p class="govuk-body">underestimated figure, age related sight loss is seen as normal occurrence so people don’t think of it as being disabled. Long/Short sightedness corrected by glasses = not vision impaired. It has to be a permanent thing that can’t be fixed.</p>
+<p class="govuk-body">There might be people who experience a permanent impairment- such as being blind, have an eye condition such as Glaucoma.</p>
+<p class="govuk-body">There might be people who temporarily experience problems due to illness or injury - such as Cataracts, eye infection.</p>
+<p class="govuk-body">And there might be people who don’t have full use of their senses because of the situation they’re in - such as forgetting their reading glasses or walking into bright sunlight.</p>
+
+<h2 class="govuk-heading-l">Hearing impairment</h2>
+<p class="govuk-body">Over 11 million people in UK have hearing loss.</p>
+<p class="govuk-body">There might be people who experience a permanent impairment- such as being deaf.</p>
+<p class="govuk-body">There might be people who temporarily experience problems due to illness or injury - such as having an ear infection, burst eardrum or a cold.</p>
+<p class="govuk-body">And there might be people who don’t have full use of their senses because of the situation they’re in - such as being in a noisy environment that prevents you from hearing other things, or forgotten their headphones and on public transport.</p>
+
+<h2 class="govuk-heading-l">Motor impairment</h2>
+<p class="govuk-body">Motor impairment is the partial or total loss of function of a body part, usually a limb or limbs. This may result in muscle weakness, poor stamina, lack of muscle control, or total paralysis.</p>
+<p class="govuk-body">In the UK, more than 10 million people have arthritis or other, similar conditions that affect the joints. Arthritis affects people of all ages, including children.</p>
+<p class="govuk-body">There might be people who experience a permanent impairment- such as being in a wheelchair or one arm.</p>
+<p class="govuk-body">There might be people who temporarily experience problems due to illness or injury- such as having an arm injury such as a broken arm.</p>
+<p class="govuk-body">And there might be people who don’t have full use of their senses because of the situation they’re in - such as holding a baby.</p>
+
+<h2 class="govuk-heading-l">Cognitive impairment</h2>
+
+<p class="govuk-body">Dyslexia affects more than six million people (source: British Dyslexia Association).</p>
+<p class="govuk-body">Cognitive disabilities include autism, Down Syndrome, traumatic brain injury (TBI), and even dementia. Less severe cognitive conditions include attention deficit disorder (ADD) and learning disabilities in general.</p>
+<p class="govuk-body">There might be people who experience a permanent impairment- such as dyslexia or autism.</p>
+<p class="govuk-body">There might be people who temporarily experience problems due to illness or injury - such as being tired, anxious, stressed.</p>
+<p class="govuk-body">And there might be people who don’t have full use of their senses because of the situation they’re in - such as holding a baby.</p>
+
